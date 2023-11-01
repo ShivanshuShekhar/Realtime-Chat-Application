@@ -1,6 +1,6 @@
 const express = require('express');
 const cors = require('cors');
-
+const morgan = require("morgan")
 const authRoutes = require('./routes/auth');
 
 const app = express();
@@ -11,6 +11,7 @@ require('dotenv').config();
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded());
+app.use(morgan("dev"));
 
 app.get('/', (req, res) => {
     res.send('Hello World!');

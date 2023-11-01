@@ -31,7 +31,7 @@ const Auth = () => {
 
         const URL = 'http://localhost:5000/auth';
 
-        const { data: { token, userId, hashedPassword } } = await axios.post(`${URL}/${isSignUp ? 'signnup' : 'login' }`, {
+        const { data: { token, userId, hashedPassword } } = await axios.post(`${URL}/${isSignUp ? 'signup' : 'login' }`, {
             username, password, fullName, phoneNumber, avatarURL
         });
 
@@ -58,7 +58,7 @@ const Auth = () => {
             <div className='auth__form-container_fields'>
                 <div className='auth__form-container_fields-content'>
                     <p>{isSignUp ? 'Sign Up' : 'Sign In'}</p>
-                    <form onSubmit={(handleSubmit) => {}}>
+                    <form onSubmit={handleSubmit}>
                         {isSignUp && (
                             <div className='auth__form-container_fields-content_input'>
                                 <label htmlFor='fullName'>Full Name</label>
