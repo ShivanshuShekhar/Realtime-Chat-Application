@@ -10,7 +10,6 @@ const api_secret = process.env.STREAM_API_SECRET;
 const api_id = process.env.STREAM_API_ID;
 
 const signup = async (req, res) => {
-    console.log(req.body)
     try {
         const { fullName, username, password, phoneNumber } = req.body;
 
